@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,52 +11,55 @@
 <body class="min-h-screen bg-cover bg-center bg-fixed"
       style="background-image: url('https://www.sbjit.edu.in/wp-content/uploads/2021/06/About-1.jpg');">
 
-    <div class="min-h-screen bg-black/20 px-4 py-6 sm:px-6 sm:py-10 md:px-8">
+    <!-- Background Overlay -->
+    <div class="min-h-screen bg-black/50 flex items-center justify-center px-3 py-6">
 
-        <div class="w-full max-w-md sm:max-w-lg mx-auto bg-white p-5 sm:p-6 md:p-8 rounded-lg shadow-lg">
+        <!-- Registration Card -->
+        <div class="w-full max-w-md bg-white p-5 sm:p-8 rounded-xl shadow-2xl">
 
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-5 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5 text-center">
                 Student Registration
             </h2>
 
             <form id="registrationForm">
 
                 <!-- Name -->
-                <label class="text-sm sm:text-base">Student Name</label>
+                <label>Student Name</label>
                 <input type="text" id="name"
-                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
+                    class="w-full border p-3 mb-3 rounded">
 
                 <!-- USN Number -->
-                <label class="text-sm sm:text-base">USN Number</label>
+                <label>USN Number</label>
                 <input type="text" id="usn"
-                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
+                    class="w-full border p-3 mb-3 rounded">
 
                 <!-- Email -->
-                <label class="text-sm sm:text-base">Email</label>
+                <label>Email</label>
                 <input type="text" id="email"
-                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
+                    class="w-full border p-3 mb-3 rounded">
 
                 <!-- Password -->
-                <label class="text-sm sm:text-base">Password</label>
+                <label>Password</label>
                 <input type="password" id="password"
-                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
+                    class="w-full border p-3 mb-3 rounded">
 
                 <button onclick="showpass()" id="togglePassword"
-                    class="bg-blue-500 text-white p-2 rounded mb-3 text-sm sm:text-base">
+                    class="bg-blue-500 text-white p-2 rounded mb-3">
                     Show Password
                 </button><br>
 
                 <!-- Mobile -->
-                <label class="text-sm sm:text-base">Mobile Number</label>
+                <label>Mobile Number</label>
                 <input type="text" id="mobile"
-                    class="w-full border p-2 sm:p-3 mb-4 rounded text-sm sm:text-base">
+                    class="w-full border p-3 mb-4 rounded">
 
+                <!-- Register -->
                 <button type="submit"
-                    class="w-full bg-blue-500 text-white p-2 sm:p-3 rounded text-sm sm:text-base">
+                    class="w-full bg-blue-500 text-white p-3 rounded">
                     Register
                 </button>
 
-                <p id="message" class="mt-4 text-center text-sm sm:text-base"></p>
+                <p id="message" class="mt-4 text-center"></p>
 
             </form>
         </div>
@@ -107,8 +111,16 @@
             }
 
             // Password validation
-            if (password.length < 6 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password) || !/[!@#$%^&*]/.test(password)) {
-                message.innerHTML = "Password must be at least 6 characters and include an uppercase letter, a lowercase letter, a number, and a special character.";
+            if (
+                password.length < 6 ||
+                !/[A-Z]/.test(password) ||
+                !/[a-z]/.test(password) ||
+                !/[0-9]/.test(password) ||
+                !/[!@#$%^&*]/.test(password)
+            ) {
+                message.innerHTML =
+                    "Password must be at least 6 characters and include an uppercase letter, a lowercase letter, a number, and a special character.";
+
                 message.className = "mt-4 text-center text-red-500";
                 return;
             }
@@ -125,7 +137,6 @@
             message.className = "mt-4 text-center text-green-500";
 
         };
-
     </script>
 
 </body>
