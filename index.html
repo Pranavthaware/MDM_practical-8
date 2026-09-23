@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,51 +10,55 @@
 <body class="min-h-screen bg-cover bg-center bg-fixed"
       style="background-image: url('https://www.sbjit.edu.in/wp-content/uploads/2021/06/About-1.jpg');">
 
+    <div class="min-h-screen bg-black/20 px-4 py-6 sm:px-6 sm:py-10 md:px-8">
 
-    <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow">
+        <div class="w-full max-w-md sm:max-w-lg mx-auto bg-white p-5 sm:p-6 md:p-8 rounded-lg shadow-lg">
 
-        <h2 class="text-2xl font-bold mb-5 text-center">
-            Student Registration
-        </h2>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-5 text-center">
+                Student Registration
+            </h2>
 
-        <form id="registrationForm">
+            <form id="registrationForm">
 
-            <!-- Name -->
-            <label>Student Name</label>
-            <input type="text" id="name"
-                class="w-full border p-2 mb-3 rounded">
+                <!-- Name -->
+                <label class="text-sm sm:text-base">Student Name</label>
+                <input type="text" id="name"
+                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
 
-            <!-- USN Number -->
-            <label>USN Number</label>
-            <input type="text" id="usn"
-                class="w-full border p-2 mb-3 rounded">
+                <!-- USN Number -->
+                <label class="text-sm sm:text-base">USN Number</label>
+                <input type="text" id="usn"
+                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
 
-            <!-- Email -->
-            <label>Email</label>
-            <input type="text" id="email"
-                class="w-full border p-2 mb-3 rounded">
+                <!-- Email -->
+                <label class="text-sm sm:text-base">Email</label>
+                <input type="text" id="email"
+                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
 
-            <!-- Password -->
-            <label>Password</label>
-            <input type="password" id="password"
-                class="w-full border p-2 mb-3 rounded">
-            <button onclick="showpass()" id="togglePassword" class="bg-blue-500 text-white p-2 rounded mb-3">
-                Show Password 
-            </button><br>
+                <!-- Password -->
+                <label class="text-sm sm:text-base">Password</label>
+                <input type="password" id="password"
+                    class="w-full border p-2 sm:p-3 mb-3 rounded text-sm sm:text-base">
 
-            <!-- Mobile -->
-            <label>Mobile Number</label>
-            <input type="text" id="mobile"
-                class="w-full border p-2 mb-4 rounded">
+                <button onclick="showpass()" id="togglePassword"
+                    class="bg-blue-500 text-white p-2 rounded mb-3 text-sm sm:text-base">
+                    Show Password
+                </button><br>
 
-            <button type="submit"
-                class="w-full bg-blue-500 text-white p-2 rounded">
-                Register
-            </button>
+                <!-- Mobile -->
+                <label class="text-sm sm:text-base">Mobile Number</label>
+                <input type="text" id="mobile"
+                    class="w-full border p-2 sm:p-3 mb-4 rounded text-sm sm:text-base">
 
-            <p id="message" class="mt-4 text-center"></p>
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white p-2 sm:p-3 rounded text-sm sm:text-base">
+                    Register
+                </button>
 
-        </form>
+                <p id="message" class="mt-4 text-center text-sm sm:text-base"></p>
+
+            </form>
+        </div>
     </div>
 
 
