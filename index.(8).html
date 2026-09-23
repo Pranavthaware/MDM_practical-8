@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-fixed"
+      style="background-image: url('https://www.sbjit.edu.in/wp-content/uploads/2021/06/About-1.jpg');">
+
+
+    <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow">
+
+        <h2 class="text-2xl font-bold mb-5 text-center">
+            Student Registration
+        </h2>
+
+        <form id="registrationForm">
+
+            <!-- Name -->
+            <label>Student Name</label>
+            <input type="text" id="name"
+                class="w-full border p-2 mb-3 rounded">
+
+            <!-- USN Number -->
+            <label>USN Number</label>
+            <input type="text" id="usn"
+                class="w-full border p-2 mb-3 rounded">
+
+            <!-- Email -->
+            <label>Email</label>
+            <input type="text" id="email"
+                class="w-full border p-2 mb-3 rounded">
+
+            <!-- Password -->
+            <label>Password</label>
+            <input type="password" id="password"
+                class="w-full border p-2 mb-3 rounded">
+            <button onclick="showpass()" id="togglePassword" class="bg-blue-500 text-white p-2 rounded mb-3">
+                Show Password 
+            </button><br>
+
+            <!-- Mobile -->
+            <label>Mobile Number</label>
+            <input type="text" id="mobile"
+                class="w-full border p-2 mb-4 rounded">
+
+            <button type="submit"
+                class="w-full bg-blue-500 text-white p-2 rounded">
+                Register
+            </button>
+
+            <p id="message" class="mt-4 text-center"></p>
+
+        </form>
+    </div>
+
+
+    <script>
+        function showpass() {
+            if (document.getElementById("password").type === "password") {
+                document.getElementById("password").type = "text";
+                document.getElementById("togglePassword").innerHTML = "Hide Password";
+            } else {
+                document.getElementById("password").type = "password";
+                document.getElementById("togglePassword").innerHTML = "Show Password";
+            }
+        }
+
+        document.getElementById("registrationForm").onsubmit = function(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let usn = document.getElementById("usn").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let mobile = document.getElementById("mobile").value;
+
+            let message = document.getElementById("message");
+
+            // Mandatory fields
+            if (name == "" || usn == "" || email == "" || password == "" || mobile == "") {
+                message.innerHTML = "Please fill all fields.";
+                message.className = "mt-4 text-center text-red-500";
+                return;
+            }
+
+            // USN validation
+            if (usn == "") {
+                message.innerHTML = "Please enter your USN number.";
+                message.className = "mt-4 text-center text-red-500";
+                return;
+            }
+
+            // Email validation
+            if (!email.includes("@") || !email.includes(".")) {
+                message.innerHTML = "Enter a valid email.";
+                message.className = "mt-4 text-center text-red-500";
+                return;
+            }
+
+            // Password validation
+            if (password.length < 6 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password) || !/[!@#$%^&*]/.test(password)) {
+                message.innerHTML = "Password must be at least 6 characters and include an uppercase letter, a lowercase letter, a number, and a special character.";
+                message.className = "mt-4 text-center text-red-500";
+                return;
+            }
+
+            // Mobile validation
+            if (mobile.length != 10 || isNaN(mobile)) {
+                message.innerHTML = "Enter a valid 10-digit mobile number.";
+                message.className = "mt-4 text-center text-red-500";
+                return;
+            }
+
+            // Success
+            message.innerHTML = "Registration Successful!";
+            message.className = "mt-4 text-center text-green-500";
+
+        };
+
+    </script>
+
+</body>
+</html>
